@@ -21,6 +21,14 @@ public class Game {
 		}
 	}
 
+	void threadSleep() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			Thread.currentThread().interrupt();
+		}
+	}
+
 	public void play() {
 		int player = 0;
 		String[][] board = {{"⬜", "⬜", "⬜", "⬜", "⬜", "⬜", "⬜", "⬜"},
@@ -33,11 +41,7 @@ public class Game {
 				{"⬜", "⬜", "⬜", "⬛", "⬛", "⬛", "⬜", "⬜"}};
 
 		printBoard(board);
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			Thread.currentThread().interrupt();
-		}
+		threadSleep();
 
 		fillBoard(board);
 		board[1][3] = "⬛"; board[1][4] = "⬛"; board[1][5] = "⬛";
@@ -49,11 +53,7 @@ public class Game {
 		board[7][2] = "⬛"; board[7][3] = "⬛"; board[7][4] = "⬛"; board[7][5] = "⬛"; board[7][6] = "⬛";
 
 		printBoard(board);
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			Thread.currentThread().interrupt();
-		}
+		threadSleep();
 
 		fillBoard(board);
 		board[1][4] = "⬛"; 
@@ -65,11 +65,7 @@ public class Game {
 		board[7][2] = "⬛"; board[7][3] = "⬛"; board[7][4] = "⬛"; board[7][5] = "⬛"; 
 
 		printBoard(board);
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			Thread.currentThread().interrupt();
-		}
+		threadSleep();
 
 		fillBoard(board);
 
